@@ -7,7 +7,6 @@ public class ArraySample {
         intArray[1]=70;
         intArray[2]=80;
 
-
         System.out.println("index1="+intArray[1]);
 
         intArray[1]=96;
