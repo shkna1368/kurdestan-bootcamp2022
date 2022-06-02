@@ -1,0 +1,12 @@
+Predefined Functional Interfaces
+Interface Purpose
+UnaryOperator<T> Apply a unary operation to an object of type T and return the result, which
+is also of type T. Its method is called apply( ).
+BinaryOperator<T> Apply an operation to two objects of type T and return the result, which is
+also of type T. Its method is called apply( ).
+Consumer<T> Apply an operation on an object of type T. Its method is called accept( ).
+Supplier<T> Return an object of type T. Its method is called get( ).
+Function<T, R> Apply an operation to an object of type T and return the result as an object
+of type R. Its method is called apply( ).
+Predicate<T> Determine if an object of type T fulfills some constraint. Return a boolean
+value that indicates the outcome. Its method is called test( ).

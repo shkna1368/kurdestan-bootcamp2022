@@ -1,0 +1,15 @@
+
+A lambda expression is, essentially, an anonymous (that is, unnamed) method.
+
+However,
+this method is not executed on its own. Instead, it is used to implement a method defined by
+a functional interface. Thus, a lambda expression results in a form of anonymous class.
+A functional interface is an interface that contains one and only one abstract method.
+Normally, this method specifies the intended purpose of the interface. Thus, a functional
+interface typically represents a single action.For example, the standard interface Runnable is a
+functional interface because it defines only one method: run( ). Therefore, run( ) defines the
+action of Runnable. Furthermore, a functional interface defines the target type of a lambda
+expression.
+
+() -> 123.45
+double myMeth() { return 123.45; }
