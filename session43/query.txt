@@ -1,0 +1,370 @@
+1-make dvdrental  database
+2-restore with dvdrental.tar
+query: 
+
+create table :
+
+CREATE TABLE distinct_demo (
+	id serial NOT NULL PRIMARY KEY,
+	bcolor VARCHAR,
+	fcolor VARCHAR
+);
+
+
+
+INSERT INTO distinct_demo (bcolor, fcolor)
+VALUES
+	('red', 'red'),
+	('red', 'red'),
+	('red', NULL),
+	(NULL, 'red'),
+	('red', 'green'),
+	('red', 'blue'),
+	('green', 'red'),
+	('green', 'blue'),
+	('green', 'green'),
+	('blue', 'red'),
+	('blue', 'green'),
+	('blue', 'blue');
+
+----------------------------------------------
+
+select
+1- SELECT first_name FROM customer;
+2-
+
+SELECT
+   first_name,
+   last_name,
+   email
+FROM
+   customer;
+
+3-
+SELECT * FROM customer;
+
+Column Alias:
+1-
+SELECT 
+   first_name, 
+   last_name AS surname
+FROM customer;
+
+
+Order By – guide you on how to sort the result set returned from a query.ASC/DESC
+
+SELECT
+	first_name,
+	last_name
+FROM
+	customer
+ORDER BY
+	first_name DESC;
+
+--------
+
+SELECT
+	first_name,
+	last_name
+FROM
+	customer
+ORDER BY
+	first_name DESC ,
+	last_name ASC
+---------------
+distinct 
+
+SELECT
+	distinct first_name
+	
+FROM
+	customer
+ORDER BY
+	
+	first_name desc
+
+--------------------
+filter 
+
+SELECT
+	last_name,
+	first_name
+FROM
+	customer
+WHERE
+	first_name = 'Jamie';
+
+------------
+SELECT
+	last_name,
+	first_name
+FROM
+	customer
+WHERE
+	first_name = 'Jamie' AND 
+        last_name = 'Rice';
+
+------------SELECT
+	first_name,
+	last_name
+FROM
+	customer
+WHERE
+	last_name = 'Rodriguez' OR 
+	first_name = 'Adam';
+-----------------
+SELECT
+	first_name,
+	last_name
+FROM
+	customer
+WHERE 
+	first_name IN ('Ann','Anne','Annie');
+----------
+SELECT
+	first_name,
+	last_name
+FROM
+	customer
+WHERE 
+	first_name LIKE 'Ann%'
+-----------
+SELECT 
+	first_name, 
+	last_name
+FROM 
+	customer 
+WHERE 
+	first_name LIKE 'Bra%' AND 
+	last_name <> 'Motley';
+
+------------------
+
+limit
+
+
+SELECT
+	film_id,
+	title,
+	release_year
+FROM
+	film
+ORDER BY
+	film_id
+LIMIT 5;
+
+----------
+
+SELECT
+	film_id,
+	title,
+	release_year
+FROM
+	film
+ORDER BY
+	film_id
+LIMIT 4 OFFSET 3;
+
+------------
+
+SELECT
+	film_id,
+	title,
+	rental_rate
+FROM
+	film
+ORDER BY
+	rental_rate DESC
+LIMIT 10;
+
+----
+fetch:The FETCH clause is functionally equivalent to the LIMIT clause. If you plan to make your application compatible with other database systems, you should use the FETCH clause because it follows the standard SQL.
+
+SELECT
+    film_id,
+    title
+FROM
+    film
+ORDER BY
+    title 
+OFFSET 5 ROWS 
+FETCH FIRST 5 ROW ONLY; 
+
+
+------------in
+SELECT customer_id,
+	rental_id,
+	return_date
+FROM
+	rental
+WHERE
+	customer_id IN (1, 2)
+ORDER BY
+	return_date DESC;
+---------------
+SELECT
+	customer_id,
+	rental_id,
+	return_date
+FROM
+	rental
+WHERE
+	customer_id NOT IN (1, 2);
+
+-------------
+SELECT
+	customer_id,
+	first_name,
+	last_name
+FROM
+	customer
+WHERE
+	customer_id IN (
+		SELECT customer_id
+		FROM rental
+		WHERE CAST (return_date AS DATE) = '2005-05-27'
+	)
+ORDER BY customer_id;
+
+----------between
+
+SELECT
+	customer_id,
+	payment_id,
+	amount
+FROM
+	payment
+WHERE
+	amount BETWEEN 8 AND 9;
+
+-----------
+SELECT
+	customer_id,
+	payment_id,
+	amount
+FROM
+	payment
+WHERE
+	amount NOT BETWEEN 8 AND 9;
+
+------------------------------
+SELECT
+	customer_id,
+	payment_id,
+	amount,
+ payment_date
+FROM
+	payment
+WHERE
+	payment_date BETWEEN '2007-02-07' AND '2007-02-15';
+
+----------------
+GROUP BY:divide rows into groups
+
+SELECT
+   customer_id
+FROM
+   payment
+GROUP BY
+   customer_id;
+
+------------
+
+SELECT
+	customer_id,
+	SUM (amount)
+FROM
+	payment
+GROUP BY
+	customer_id;
+
+--------
+SELECT
+	customer_id,
+	SUM (amount)
+FROM
+	payment
+GROUP BY
+	customer_id
+ORDER BY
+	SUM (amount) DESC;
+
+-----------
+SELECT
+	staff_id,
+	COUNT (payment_id)
+FROM
+	payment
+GROUP BY
+	staff_id;
+
+----------
+SELECT 
+	customer_id, 
+	staff_id, 
+	SUM(amount) 
+FROM 
+	payment
+GROUP BY 
+	staff_id, 
+	customer_id
+ORDER BY 
+    customer_id;
+
+-----------
+
+SELECT 
+	DATE(payment_date) paid_date, 
+	SUM(amount) sum
+FROM 
+	payment
+GROUP BY
+	DATE(payment_date);
+----------------------
+HAVING :HAVING clause is applied to groups of rows.
+
+SELECT
+	customer_id,
+	SUM (amount)
+FROM
+	payment
+GROUP BY
+	customer_id
+HAVING
+	SUM (amount) > 200;
+
+------
+SELECT
+	store_id,
+	COUNT (customer_id)
+FROM
+	customer
+GROUP BY
+	store_id
+HAVING
+	COUNT (customer_id) > 300;
+---------
+subquery
+
+SELECT
+	film_id,
+	title,
+	rental_rate
+FROM
+	film
+WHERE
+	rental_rate > (
+		SELECT
+			AVG (rental_rate)
+		FROM
+			film
+	);
+
+
+----------------------
+
+
+
+
+
+
