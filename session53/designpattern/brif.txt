@@ -1,0 +1,44 @@
+Design Patterns in Java
+
+A design patterns are well-proved solution for solving the specific problem/task.
+
+Problem Given:
+Suppose you want to create a class for which only a single instance (or object) should be created and that single object can be used by all other classes.
+
+Solution:
+Singleton design pattern is the best solution of above specific problem. So, every design pattern has some specification or set of rules for solving the problems. What are those specifications, you will see later in the types of design patterns.
+
+1.Creational Design Pattern:Creational design patterns are concerned with the way of creating objects.
+Factory Pattern
+Abstract Factory Pattern
+Singleton Pattern
+Prototype Pattern
+Builder Pattern.
+2. Structural Design Pattern:Structural design patterns are concerned with how classes and objects can be composed, to form larger structures.he structural design patterns simplifies the structure by identifying the relationships.
+Adapter Pattern
+Bridge Pattern
+Composite Pattern
+Decorator Pattern
+Facade Pattern
+Flyweight Pattern
+Proxy Pattern
+3. Behavioral Design Pattern:Behavioral design patterns are concerned with the interaction and responsibility of objects.
+
+In these design patterns, the interaction between the objects should be in such a way that they can easily talk to each other and still should be loosely coupled.
+
+
+Chain Of Responsibility Pattern
+Command Pattern
+Interpreter Pattern
+Iterator Pattern
+Mediator Pattern
+Memento Pattern
+Observer Pattern
+State Pattern
+Strategy Pattern
+Template Pattern
+Visitor Pattern
+
+
+
+Prototype Pattern says that cloning of an existing object instead of creating new one and can also be customized as per the requirement.
