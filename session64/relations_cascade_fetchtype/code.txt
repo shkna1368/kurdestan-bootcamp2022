@@ -1,0 +1,3 @@
+Relations:  https://qsstudy.com/different-types-of-relationship-in-database/
+Cascade:    https://i.stack.imgur.com/FPeRL.png
+FetchType:  http://www.daxiongmao.eu/wiki/index.php?title=File:Jpa_fetch_type.png
