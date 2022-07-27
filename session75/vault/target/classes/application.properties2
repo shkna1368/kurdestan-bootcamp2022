@@ -1,0 +1,8 @@
+server.port= 8070
+spring.jpa.hibernate.ddl-auto= update
+spring.jpa.database-platform= org.hibernate.dialect.PostgreSQLDialect
+spring.datasource.url= jdbc:postgresql://localhost:5432/carmanagment
+spring.datasource.username=${dbusername}
+spring.datasource.password= ${dbpassword}
+#spring.datasource.username=postgres
+#spring.datasource.password= Shkna1368

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: shababApp
+  cloud:
+    vault:
+      host: localhost
+      port: 8200
+      scheme: http
+      token: s.wTJWndRGhXiSDrGAlyDC2xWx

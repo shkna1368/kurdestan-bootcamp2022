@@ -1,0 +1,73 @@
+*
+https://www.vaultproject.io/downloads
+
+https://www.techgeeknext.com/spring-boot/spring-cloud-vault
+
+make vaultconfig.hcl file with these content :
+
+-------------------------
+storage "file" {
+	path= "./vault-data"
+}
+
+listener "tcp" {
+  address = "127.0.0.1:8200"
+  tls_disable =1		
+}
+
+
+disable_mlock=true
+
+----------------------
+add in application.yml
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+
+
+
+
+start server
+vault server -config ./vaultconfig.hcl
+
+
+open  another terminal:
+
+set VAULT_ADDR=http://localhost:8200
+
+vault operator init:copy token
+
+
+ set VAULT_TOKEN=s.wTJWndRGhXiSDrGAlyDC2xWx
+
+
+
+
+vault operator unseal oeZU/5V3gicAq15dPx3hcv4ltMJLkiNpVi/xeZeprLc1
+
+
+vault operator unseal rFXtF6MhpyH7cV1NT6pLtMcE9nI9sR5ZQc7MkESMVuHC
+
+vault operator unseal PqbANqygVoi+nHfj88uotwhZ4pxMZ5Pg1DxpDAr4mRdg
+
+vault operator unseal 0lF9rUvXXopvfpbVUAuNzHMqFm3DJTUjF8YOMUpzCTOn
+
+vault operator unseal o5QlZKuoD0Tjl8pwZe794cOPccZKYoBnq4vj3Hm8k7ma
+
+vault secrets enable -path=secret/ kv
+
+vault kv put secret/shababApp dbusername=postgres  dbpassword=Shkna1368 check.flag=true
+
+
+check api :  http://localhost:8070/greet
+
+then change :   vault kv put secret/shababApp dbusername=postgres  dbpassword=Shkna1368 check.flag=false
+
+in postman POST:  http://localhost:8070/actuator/refresh    POST
+
+check api :  http://localhost:8070/greet
+
+admin ui :   http://localhost:8200/

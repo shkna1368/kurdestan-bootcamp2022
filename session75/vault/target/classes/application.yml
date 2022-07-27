@@ -1,0 +1,18 @@
+server:
+  port: 8070
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/carmanagment"
+    username: ${dbusername}
+    password: ${dbpassword}
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+    

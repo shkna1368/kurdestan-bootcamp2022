@@ -1,0 +1,2 @@
+spring.cloud.vault.token= s.LqgTdZ5JkfiOXbFuFE8dA0tH
+spring.cloud.vault.scheme=http
