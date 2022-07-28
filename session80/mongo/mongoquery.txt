@@ -1,0 +1,8 @@
+{"name":"reza"}
+
+{"name":/rez/}
+
+age:{$gt:2}
+
+{age:{$gt:30}}
+{age:{$lt:39}}

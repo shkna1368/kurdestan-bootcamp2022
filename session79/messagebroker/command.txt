@@ -1,0 +1,23 @@
+---------kafka
+1-go to kafka folder/windows
+
+2-start zookeeper
+zookeeper-server-start.bat ../../config/zookeeper.properties
+
+3-start kafka
+
+kafka-server-start.bat ../../config/server.properties
+
+4-make topic 
+kafka-topics.bat --create --topic my-events --bootstrap-server localhost:9092
+
+5-make producer
+ kafka-console-producer.bat --topic my-events --bootstrap-server localhost:9092
+
+6-make
+kafka-console-consumer.bat --topic my-events --from-beginning --bootstrap-server localhost:9092
+
+------------rabbit
+go to rabbit folder/sbin
+
+rabbitmq-server.bat

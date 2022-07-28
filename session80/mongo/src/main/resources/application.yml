@@ -1,0 +1,10 @@
+
+spring:
+  application:
+    name: spring-mongo-crud
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/krddb
+
+server:
+  port: 8081
