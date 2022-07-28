@@ -1,0 +1,29 @@
+1- download keycloak 
+2-go to bin folder in keycloak:
+in cmd  type :
+kc.bat start-dev
+
+3-go to :http://127.0.0.1:8080  enter admin user password
+
+4-make realm (mapsarealm)
+5-make client(mapsaclient-openidconnect-http://localhost:8095/*(root of spring server))
+in client,credential copy client secret
+
+6-make roles(user-admin)
+
+7-make users(in manage section)  add user then in credential set password and disable temporal
+
+8-in user, in tab role mappings set role.
+
+9-in postman:
+url:http://localhost:8080/realms/krdbrealm/protocol/openid-connect/token
+authorization:oauth2
+grant type:password credential
+access token:http://localhost:8080/realms/krdbrealm/protocol/openid-connect/token
+client secret:from client,crdential tab client secret
+client id:mapsaclient
+user name:user
+password:user
+scope:openid
+client authentication:send as basic auth header
+10-click get new token,proceed ,use token
