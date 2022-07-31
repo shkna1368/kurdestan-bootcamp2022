@@ -1,0 +1,31 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/emp_mg
+    username: postgres
+    password: ShababSpara
+
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+minio:
+  bucket:
+    name: epm
+  default:
+    folder: "/"
+  access:
+    name: minioadmin
+    secret: minioadmin
+
+  url: http://127.0.0.1:9000
+
+
+---

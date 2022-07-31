@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.kurdestan.bootcamp.post.PostServiceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.008 s <<< FAILURE! - in com.kurdestan.bootcamp.post.PostServiceTest
+save  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.kurdestan.bootcamp.post.PostRepository.save(Object)" because "this.repository" is null
+	at com.kurdestan.bootcamp.post.PostServiceTest.save(PostServiceTest.java:44)
+
+findByCarTypeTest  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.kurdestan.bootcamp.post.PostRepository.findAll()" because "this.repository" is null
+	at com.kurdestan.bootcamp.post.PostServiceTest.findByCarTypeTest(PostServiceTest.java:69)
+
