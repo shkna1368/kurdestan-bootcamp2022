@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd
+  http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd">
+    <changeSet id="create-table-hose-id" author="Shabab">
+        <createTable tableName="tbl_house">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" primaryKeyName="house_id_pk" />
+            </column>
+            <column name="owner" type="varchar(250)">
+                <constraints unique="true" uniqueConstraintName="house_owner_unq" />
+            </column>
+            <column name="fully_paid" type="boolean" defaultValueBoolean="false"></column>
+        </createTable>
+
+        <addAutoIncrement tableName="tbl_house" columnName="id" columnDataType="bigint" startWith="1" incrementBy="1" />
+        <createSequence sequenceName="hibernate_sequence" incrementBy="1" startValue="1" />
+    </changeSet>
+</databaseChangeLog>

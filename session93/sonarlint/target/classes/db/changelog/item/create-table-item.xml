@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd
+  http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd">
+    <changeSet id="create-table-item-id" author="shabab-koohi">
+
+        <createTable tableName="tbl_item">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" primaryKeyName="item_id_pk" />
+            </column>
+            <column name="name" type="varchar(250)" />
+            <column name="house_id" type="bigint">
+                <constraints nullable="false" notNullConstraintName="item_house_id_nn" />
+            </column>
+        </createTable>
+        <addAutoIncrement tableName="tbl_item" columnName="id" columnDataType="bigint" startWith="1" incrementBy="1" />
+        <createSequence sequenceName="hibernate_sequence" incrementBy="1" startValue="1" />
+        <addForeignKeyConstraint baseTableName="tbl_item" baseColumnNames="house_id" constraintName="item_house_id_fk" referencedTableName="tbl_house" referencedColumnNames="id" />
+    </changeSet>
+</databaseChangeLog>
