@@ -1,0 +1,6 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/house/create-table-house.xml
+  - include:
+      file: db/changelog/item/create-table-item.xml
+
