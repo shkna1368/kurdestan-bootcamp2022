@@ -1,0 +1,79 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  annotations:
+    app.quarkus.io/build-timestamp: 2022-08-03 - 21:22:23 +0000
+  labels:
+    app.kubernetes.io/name: quarksdemo
+    app.kubernetes.io/version: 1.0-SNAPSHOT
+  name: quarksdemo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    app.quarkus.io/build-timestamp: 2022-08-03 - 21:22:23 +0000
+  labels:
+    app.kubernetes.io/name: quarksdemo
+    app.kubernetes.io/version: 1.0-SNAPSHOT
+  name: quarksdemo
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+  selector:
+    app.kubernetes.io/name: quarksdemo
+    app.kubernetes.io/version: 1.0-SNAPSHOT
+  type: ClusterIP
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: quarksdemo-view
+roleRef:
+  kind: ClusterRole
+  apiGroup: rbac.authorization.k8s.io
+  name: view
+subjects:
+  - kind: ServiceAccount
+    name: quarksdemo
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    app.quarkus.io/build-timestamp: 2022-08-03 - 21:22:23 +0000
+  labels:
+    app.kubernetes.io/name: quarksdemo
+    app.kubernetes.io/version: 1.0-SNAPSHOT
+  name: quarksdemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: quarksdemo
+      app.kubernetes.io/version: 1.0-SNAPSHOT
+  template:
+    metadata:
+      annotations:
+        app.quarkus.io/build-timestamp: 2022-08-03 - 21:22:23 +0000
+      labels:
+        app.kubernetes.io/name: quarksdemo
+        app.kubernetes.io/version: 1.0-SNAPSHOT
+    spec:
+      containers:
+        - env:
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          image: java/quarksdemo:1.0-SNAPSHOT
+          imagePullPolicy: Always
+          name: quarksdemo
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+      serviceAccountName: quarksdemo
