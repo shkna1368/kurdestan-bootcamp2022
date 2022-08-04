@@ -29,10 +29,16 @@ minio:
 
 
 ---
-spring:
-   cache:
-     type: redis
-   redis:
-    host: localhost
-    port: 6379
-    cache-null-values: true
+management:
+  metrics:
+    tags:
+      application: MonitoringSpringDemoProject
+  endpoints:
+    health:
+      show-details: always
+    web:
+        exposure:
+          include: "*"
+
+---
+
