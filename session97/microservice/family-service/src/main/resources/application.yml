@@ -1,0 +1,43 @@
+server:
+  port: 0
+  servlet:
+    context-path: /familyservice
+---
+
+springdoc:
+  swagger-ui:
+    path: /swagger
+
+  api-docs:
+    path: /api-docs
+---
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/family-service
+    username: postgres
+    password: Shkna1368
+
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+
+---
+servlet:
+  multipart:
+    enabled: true
+    max-file-size: 10MB
+    max-request-size: 15MB
+
+---
+
+spring:
+  application:
+    name: family-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    enabled: true
