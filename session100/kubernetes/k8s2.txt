@@ -1,0 +1,15 @@
+minikube start --driver=docker  
+
+minikube docker-env  
+@FOR /f "tokens=*" %i IN ('minikube -p minikube docker-env --shell cmd') DO @%i
+cd C:\Users\Java\Desktop\New folder\g\KrdHr
+docker build -t krdh:1.0 .  
+
+docker images  
+
+kubectl create deployment krdhh --image=krdh:1.0 --port=8090  
+kubectl get deployments   
+kubectl expose deployment krdhh --type=ClusterIP    
+kubectl get services  
+kubectl port-forward svc/krdhh 8090:8090  
+open another terminal: minikube dashboard

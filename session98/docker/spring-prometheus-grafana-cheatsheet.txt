@@ -1,0 +1,77 @@
+1-add dependencies:
+ <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+            <version>1.9.2</version>
+        </dependency>
+
+2- update application.yml
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: MonitoringKrdSpringDemoProject
+
+3- see metrics in:  localhost:8090/actuator/prometheus
+
+4-add custom metrics :DemoMetrics and DemoMetricsScheduler and ebale schedulaer 
+and check in : localhost:8090/actuator/prometheus
+
+5-download prometheus from:  https://prometheus.io/download/
+
+6-go to promethues folder add promethus.yml with these content :
+scrape_configs:
+  - job_name: 'Kurdestan-Spring Boot Application input'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 2s
+    static_configs:
+      - targets: ['localhost:8090']
+        labels:
+          application: 'My Kurdestan Spring Boot Application'
+
+7- run promethus in cmd: promethus.exe and open  localhost:9090 
+
+8- add filter jvm_memory_used_bytes and see result
+
+9-in status/targets section see application
+
+10-see custom metrics  : demo_gauge
+
+11-see metric http_server_requests_seconds_count (for see result call multiple api)
+
+12- add in specific controller   @Timed("post.getAll")
+
+13-dowmload grafana : https://grafana.com/grafana/download
+
+14- make custom.ini file in E:\DevTools\grafana-9.0.6\conf: change http_port=3006
+
+15-run grafana : grafana-server.exe
+
+16- go to http://localhost:3006/ enter "admin" as login and password.
+
+17-select add your first datasource/Prometheus/fill name(krd) and http url with promethus address:http://localhost:9090  and click save and test.
+
+18-in window menu select import end enter 4701 in id section and load.
+19-in new window . promethus select dashboard "krd"
+20-you can see pannel
+21-in top right add new panel /select stat/select metic /apply
+22-add demo guage time series
+
+
+
+

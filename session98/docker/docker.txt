@@ -1,0 +1,28 @@
+Containerization is a technology that’s been around for a long time, but it’s seen new life with Docker. It packages applications as images that contain everything needed to run them: code, runtime environment, libraries, and configuration. Images run in containers, which are discrete processes that take up only as many resources as any other executable.
+
+It’s important to note that Docker containers don’t run in their own virtual machines, but share a Linux kernel. Compared to virtual machines, containers use less memory and less CPU.
+
+docker ps -a lists the containers on our system:
+
+Let’s run this image again with docker run hello-world
+
+docker run -v /full/path/to/html/directory:/usr/share/nginx/html:ro -p 8080:80 -d nginx
+
+Stop and remove a container:
+ docker stop compassionate_ritchie
+ docker stop compassionate_ritchie
+
+Create a Docker image:
+make docker file
+FROM nginx
+COPY html /usr/share/nginx/html
+
+docker build -t mynginx .
+make container
+$ docker run --name foo -d -p 8080:80 mynginx
+
+docker compose up -d
+
+
+
+

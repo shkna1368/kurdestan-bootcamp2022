@@ -1,0 +1,59 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    url: jdbc:postgresql://192.168.43.15:5432/emp_mg
+    username: postgres
+    password: Shkna1368
+
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+minio:
+  bucket:
+    name: epm
+  default:
+    folder: "/"
+  access:
+    name: minioadmin
+    secret: minioadmin
+
+  url: http://127.0.0.1:9000
+
+
+
+
+
+
+---
+spring:
+  devtools:
+    restart:
+      quiet-period : 1000
+      poll-interval: 1100
+
+
+---
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: MonitoringKrdSpringDemoProject
+
+
+
+
+
+

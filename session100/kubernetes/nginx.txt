@@ -1,0 +1,1 @@
+docker run -v C:\Users\html:/usr/share/nginx/html:ro -p 7171:80 -d nginx

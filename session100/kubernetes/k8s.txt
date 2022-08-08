@@ -1,0 +1,12 @@
+minikube start --driver=docker
+kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
+kubectl get deployments
+kubectl expose deployment hello-node --type=ClusterIP --port=8080
+kubectl get service
+kubectl port-forward svc/hello-node 8080:8080
+minikube dashboard --url
+
+
+kubectl delete service hello-node
+kubectl delete deployment hello-node
+
