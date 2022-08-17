@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+
+
+option java_multiple_files = true;
+option java_package = "com.kurdestanbootcamp.postemployeeservice";
+
+message EmployeeRequest{
+  sint64	 id = 1;
+}
+message EmployeeResponse {
+  sint64	 id = 1;
+  string name = 2;
+  string family = 3;
+  string nationalCode = 4;
+  sint64	 birthDay = 5;
+  bool isMarried = 6;
+  int32 childCount = 7;
+
+}
+
+service GEmployeeService {
+  rpc getEmployee(EmployeeRequest) returns (EmployeeResponse) {};
+}
+
+
+
