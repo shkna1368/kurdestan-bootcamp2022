@@ -6,6 +6,7 @@ https://www.techgeeknext.com/spring-boot/spring-cloud-vault
 make vaultconfig.hcl file with these content :
 
 -------------------------
+ui = true
 storage "file" {
 	path= "./vault-data"
 }
