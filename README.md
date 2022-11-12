@@ -46,19 +46,19 @@ kurdestan bootcamp 2022 code repository </br>
 38-Stream  GroupBy [Youtube](https://youtu.be/7IhxRrAvEpU) </br>
 39-Exception Handling [Youtube](https://youtu.be/B37_dxTqEl8) </br>
 40-Custom Exception  [Youtube](https://youtu.be/sfRigifMx-Y) </br>
-41-Thread </br>
-42-Database (sql) </br>
-43-SQL(query) </br>
-44-JDBC </br>
-45-CRUD </br>
-46-Socket programming(TCP) </br>
-47-Socket programming (UDP) </br>
-48-I/O </br>
-49-Swing (user interface) </br>
-50-Reflection </br>
-51- Maven </br>
-52- Git (source control) </br>
-53-Design pattern </br>
+41-Thread [Youtube](https://youtu.be/iTGlwSWDibU) </br>
+42-Database (sql) [Youtube](https://youtu.be/-YTsJbQ5N2A) </br>
+43-SQL(query) [Youtube](https://youtu.be/R6lhqeDhCms) </br>
+44-JDBC [Youtube](https://youtu.be/E58y37MeM9M) </br>
+45-CRUD [Youtube](https://youtu.be/auL9MJfc0ic) </br>
+46-Socket programming(TCP) [Youtube](https://youtu.be/sZ1LYoIESW8) </br>
+47-Socket programming (UDP) [Youtube](https://youtu.be/sZ1LYoIESW8) </br>
+48-I/O [Youtube](https://youtu.be/sfRigifMx-Y) </br>
+49-Swing (user interface) [Youtube](https://youtu.be/dE6oR_wIBDY) </br>
+50-Reflection [Youtube](https://youtu.be/HPgcZTLHxJ4) </br>
+51-Maven [Youtube](https://youtu.be/zPW1sr-IZG8) </br>
+52-Git (source control) [Youtube](https://youtu.be/HPgcZTLHxJ4) </br>
+53-Design pattern [Youtube](https://youtu.be/IgHnhPLULAw) </br>
 
 ----Spring boot-----
 
