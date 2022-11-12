@@ -25,27 +25,27 @@ kurdestan bootcamp 2022 code repository </br>
 17-OOP Project [Youtube](https://www.youtube.com/watch?v=hz-wSpreS6w) </br>
 18-Record [Youtube](https://www.youtube.com/watch?v=7Gid5vR5yB0) </br>
 19-Sealed class [Youtube](https://www.youtube.com/watch?v=2ndeMlxNjwc) </br>
-20-Pattern matching [Youtube]https://www.youtube.com/watch?v=BurUesKLQE4&t=3s) </br>
-21-Wrapper class </br>
-22-Generic </br>
-23-Wildcards </br>
-24-Lambda expression(functional programming) </br>
-25-Lambda with generic </br>
-26-Lambda as argument </br>
-27-Lambda method refrence </br>
-28-Lambda predefined functional interface </br>
-29-Collection -Arraylist &Linkedlist </br>
-30-Set </br>
-31-Queue  </br>
-32-Hashmap & Hashtable </br>
-33-Collection Project </br>
-34-Optional </br>
-35-Stream   </br>
-36-Stream  Map </br>
-37-Stream  Collect </br>
-38-Stream  GroupBy </br>
-39-Exception Handling </br>
-40-Custom Exception  </br>
+20-Pattern matching [Youtube](https://www.youtube.com/watch?v=BurUesKLQE4&t=3s) </br>
+21-Wrapper class  [Youtube](https://youtu.be/V7ez2wn4B5w) </br>
+22-Generic [Youtube](https://youtu.be/IBQqJ_TJBSE) </br>
+23-Wildcards [Youtube](https://youtu.be/Zv337DDic-w) </br>
+24-Lambda expression(functional programming) [Youtube](https://youtu.be/vuJeEDf9BE4) </br>
+25-Lambda with generic [Youtube](https://youtu.be/gkhZyN_uJhY) </br>
+26-Lambda as argument [Youtube](https://youtu.be/ZEBVMDKjLVo) </br>
+27-Lambda method refrence [Youtube](https://youtu.be/vOVmWUVnhIQ) </br>
+28-Lambda predefined functional interface [Youtube](https://youtu.be/1Kd4qzkvIsQ) </br>
+29-Collection -Arraylist &Linkedlist [Youtube](https://youtu.be/nYuhjh-vjbA) </br>
+30-Set [Youtube](https://youtu.be/-TAc6nOY6X4) </br>
+31-Queue  [Youtube](https://youtu.be/6MC5PVjzffE) </br>
+32-Hashmap & Hashtable [Youtube](https://youtu.be/Jmc0do_96ZI) </br>
+33-Collection Project [Youtube](https://youtu.be/IYuH44gXgr8) </br>
+34-Optional [Youtube](https://youtu.be/CH-7Pmeob-c) </br>
+35-Stream   [Youtube](https://youtu.be/Rb3uOokijHM) </br>
+36-Stream  Map [Youtube](https://youtu.be/BuFPbTfpTNw) </br>
+37-Stream  Collect [Youtube](https://youtu.be/-39RGENCg5g) </br>
+38-Stream  GroupBy [Youtube](https://youtu.be/7IhxRrAvEpU) </br>
+39-Exception Handling [Youtube](https://youtu.be/B37_dxTqEl8) </br>
+40-Custom Exception  [Youtube](https://youtu.be/sfRigifMx-Y) </br>
 41-Thread </br>
 42-Database (sql) </br>
 43-SQL(query) </br>
