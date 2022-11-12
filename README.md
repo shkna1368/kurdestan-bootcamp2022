@@ -16,16 +16,16 @@ kurdestan bootcamp 2022 code repository </br>
 8-String [Youtube](https://www.youtube.com/watch?v=sGuJCGs5oIg&t=5s) </br>
 9-Method(function) [Youtube](https://www.youtube.com/watch?v=ZPVx4MTGZD4&t=15s) </br>
 10-OOP -Encapsulation [Youtube](https://www.youtube.com/watch?v=1MzCTbmXkf4&t=1s) </br>
-11-Inheritance </br>
-12-Abstraction - Abstract </br>
-13-Abstract - Interface </br>
-14-Polymorphism </br>
-15-Equal </br>
-16-Enum </br>
-17-OOP Project </br>
-18-Record </br>
-19-Sealed class </br>
-20-Pattern matching </br>
+11-Inheritance [Youtube](https://www.youtube.com/watch?v=h-RNwM_MVJU&t=1s) </br>
+12-Abstraction - Abstract [Youtube](https://www.youtube.com/watch?v=MY7a3RSuonI) </br>
+13-Abstract - Interface [Youtube](https://www.youtube.com/watch?v=a9fS0pFdXYI) </br>
+14-Polymorphism [Youtube](https://www.youtube.com/watch?v=7uBuIQkfq6U) </br>
+15-Equal [Youtube](https://www.youtube.com/watch?v=73bnAEjauyQs) </br>
+16-Enum [Youtube](https://www.youtube.com/watch?v=wGImzJGQVz0) </br>
+17-OOP Project [Youtube](https://www.youtube.com/watch?v=hz-wSpreS6w) </br>
+18-Record [Youtube](https://www.youtube.com/watch?v=7Gid5vR5yB0) </br>
+19-Sealed class [Youtube](https://www.youtube.com/watch?v=2ndeMlxNjwc) </br>
+20-Pattern matching [Youtube]https://www.youtube.com/watch?v=BurUesKLQE4&t=3s) </br>
 21-Wrapper class </br>
 22-Generic </br>
 23-Wildcards </br>
