@@ -64,7 +64,7 @@ kurdestan bootcamp 2022 code repository </br>
 
 54-JEE [Youtube](https://youtu.be/q353MfQr40k) </br>
 55-First spring boot app [Youtube](https://youtu.be/u3Yr0mswacg) </br>
-56-spring service - DI(dependency injection) [Youtube](https://youtu.be/f-MfT0Bl_GA) </br>
+56-spring service - DI(dependency injection) [Youtube](https://youtu.be/PmrQcgFFjHI) </br>
 57-Entity & Repository [Youtube](https://youtu.be/9xtOq_GkmQY) </br>
 58-CRUD1 [Youtube](https://youtu.be/mqeipAUphkk) </br>
 59-CRUD2 [Youtube](https://youtu.be/f-MfT0Bl_GA) </br>
