@@ -67,7 +67,7 @@ kurdestan bootcamp 2022 code repository </br>
 56-spring service - DI(dependency injection) [Youtube](https://youtu.be/PmrQcgFFjHI) </br>
 57-Entity & Repository [Youtube](https://youtu.be/9xtOq_GkmQY) </br>
 58-CRUD1 [Youtube](https://youtu.be/mqeipAUphkk) </br>
-59-CRUD2 [Youtube](https://youtu.be/f-MfT0Bl_GA) </br>
+59-CRUD2 [Youtube](https://youtu.be/f-MfT0Bl_GA)  </br>
 60-JPA-ORM-SPRING DATA JPA [Youtube](https://youtu.be/BXwFRk-403w) </br>
 61-DTO (mapstruct) [Youtube](https://youtu.be/IciqVtPCaBo) </br>
 62-Specification [Youtube](https://youtu.be/MUtJ8tj6hdU) </br>
