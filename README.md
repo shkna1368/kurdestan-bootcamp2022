@@ -9,13 +9,13 @@ kurdestan bootcamp 2022 code repository </br>
 1-First java app [Youtube](https://www.youtube.com/watch?v=6QG6NjJXO1A&t=15s) </br>
 2-Variable [Youtube](https://www.youtube.com/watch?v=Yjx8c44Yvno&t=1s) </br>
 3-Operators [Youtube](https://www.youtube.com/watch?v=i6yrIfwP18M&t=2s) </br>
-4-Input-scanner [Youtube](https://www.youtube.com/channel/UCDbju5uOps_q6DvA_Pr9s-Q/videos) </br>
+4-Input-scanner [Youtube](https://www.youtube.com/watch?v=OQ9J7-66kTo&t=1s) </br>
 5-Control statement(if else-switch) [Youtube](https://www.youtube.com/watch?v=YoaTUqERyeQ&t=6s) </br>
-6-Loop</br>
-7-Array-foreach </br>
-8-String </br>
-9-Method(function) </br>
-10-OOP -Encapsulation </br>
+6-Loop [Youtube](https://www.youtube.com/watch?v=tlpDhJrIYYs&t=2s) </br>
+7-Array-foreach [Youtube](https://www.youtube.com/watch?v=w8kNuk9jYBw&t=5s) </br>
+8-String [Youtube](https://www.youtube.com/watch?v=sGuJCGs5oIg&t=5s) </br>
+9-Method(function) [Youtube](https://www.youtube.com/watch?v=ZPVx4MTGZD4&t=15s) </br>
+10-OOP -Encapsulation [Youtube](https://www.youtube.com/watch?v=1MzCTbmXkf4&t=1s) </br>
 11-Inheritance </br>
 12-Abstraction - Abstract </br>
 13-Abstract - Interface </br>
