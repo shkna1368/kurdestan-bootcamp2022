@@ -7,10 +7,10 @@ kurdestan bootcamp 2022 code repository </br>
 ![Screenshot](KurdestanBootcamp.jpg)
 # Table of conntent:</br>
 1-First java app [Youtube](https://www.youtube.com/watch?v=6QG6NjJXO1A&t=15s) </br>
-2 -Variable</br>
-3-Operators</br>
-4-Input-scanner</br>
-5-Control statement(if else-switch)</br>
+2-Variable [Youtube](https://www.youtube.com/watch?v=Yjx8c44Yvno&t=1s) </br>
+3-Operators [Youtube](https://www.youtube.com/watch?v=i6yrIfwP18M&t=2s) </br>
+4-Input-scanner [Youtube](https://www.youtube.com/channel/UCDbju5uOps_q6DvA_Pr9s-Q/videos) </br>
+5-Control statement(if else-switch) [Youtube](https://www.youtube.com/watch?v=YoaTUqERyeQ&t=6s) </br>
 6-Loop</br>
 7-Array-foreach </br>
 8-String </br>
