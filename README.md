@@ -99,26 +99,26 @@ kurdestan bootcamp 2022 code repository </br>
 88-Profile [Youtube](https://youtu.be/lZ_oD7f-M3M) </br>
 89-Unit test & Integrate test [Youtube](https://youtu.be/mrMkCRcU374) </br>
 90-Database migration(Liquibase) [Youtube](https://youtu.be/4WEjYNlqk_k) </br>
-91-Video streaming</br>
-92-Websocket </br>
-93-code quality(SonarLint)</br>
-94-Spring boot 3 </br>
-95-Qurkus  </br>
-96-Prometheus&Grafana(monitoring) </br>
-97-Microservice </br>
-98-Docker </br>
-99-Jenkins </br>
-100-kubernetes </br>
-101-grpc </br>
-102-vaadin </br>
+91-Video streaming [Youtube](https://youtu.be/H_jlisDipYQ) </br>
+92-Websocket [Youtube](https://youtu.be/ymsQ6fRUZf0) </br>
+93-code quality(SonarLint) [Youtube](https://youtu.be/jwWsQeBWcqs) </br>
+94-Spring boot 3 [Youtube](https://youtu.be/c6e5K8mLHCo) </br>
+95-Qurkus  [Youtube](https://youtu.be/QmO0uNSzNf8) </br>
+96-Prometheus&Grafana(monitoring) [Youtube](https://youtu.be/RjJpd3K8E68) </br>
+97-Microservice [Youtube](https://youtu.be/n-eTcWKgO5I) </br>
+98-Docker [Youtube](https://youtu.be/rGLoVcnezx0) </br>
+99-Jenkins [Youtube](https://youtu.be/GMljIRoyj1A) </br>
+100-kubernetes [Youtube](https://youtu.be/9kCtD70bLog) </br>
+101-grpc [Youtube](https://youtu.be/lVsWeBYO-zo) </br>
+102-vaadin [Youtube](https://youtu.be/HzMgr_FUOKI) </br>
 ---front---- 
-103-reactjs </br>
-104-reactjs </br>
-105-reactjs </br>
-106-reactjs </br>
-107-reactjs </br>
-108-reactjs </br>
-109-reactjs </br>
+103-reactjs [Youtube](https://youtu.be/eAeR4FgAMdg) </br>
+104-reactjs [Youtube](https://youtu.be/04NFcbb9Qec) </br>
+105-reactjs [Youtube](https://youtu.be/Fr8TApi72KM) </br>
+106-reactjs [Youtube](https://youtu.be/Xsm7UYj4GmI) </br>
+107-reactjs [Youtube](https://youtu.be/8q3g8gGbnQo) </br>
+108-reactjs [Youtube](https://youtu.be/hhwJkn31DBU) </br>
+109-reactjs [Youtube](https://youtu.be/RTywXOFp5Xs) </br>
 ---Machine vision---- </br>
-110-ocr </br>
-112-opencv </br>
+110-ocr [Youtube](https://youtu.be/a-D6ey2lGhk) </br>
+111-opencv [Youtube](https://youtu.be/HVSzj_nS07w) </br>
