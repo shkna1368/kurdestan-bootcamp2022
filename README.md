@@ -6,7 +6,7 @@ kurdestan bootcamp 2022 code repository </br>
 
 ![Screenshot](KurdestanBootcamp.jpg)
 # Table of conntent:</br>
-1-First java app[Youtube](https://www.youtube.com/watch?v=6QG6NjJXO1A&t=15s) </br>
+1-First java app [Youtube](https://www.youtube.com/watch?v=6QG6NjJXO1A&t=15s) </br>
 2 -Variable</br>
 3-Operators</br>
 4-Input-scanner</br>
