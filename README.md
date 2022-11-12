@@ -88,7 +88,7 @@ kurdestan bootcamp 2022 code repository </br>
 77-Monitoring(spring boot admin) [Youtube](https://youtu.be/Jfa3P60jPTk) </br>
 78-AOP <[Youtube](https://youtu.be/BigeftF3IGc) </br>
 79-Message broker(kafka-rabbitmq) [Youtube](https://youtu.be/kMjUALWlPrA) </br>
-80-Spring MongoDB [Youtube](https://youtu.be/0KIaM3yCOw8) </br>
+80-Spring MongoDB [Youtube](https://youtu.be/bjsR93D-q6s) </br>
 81-Load test by jmeter [Youtube](https://youtu.be/XogIbs00BDY) </br>
 82-Security(Authenticate-Authorize) [Youtube](https://youtu.be/4MHK27bMS4g) </br>
 83-Keycloak [Youtube](https://youtu.be/zFHbLFlogUE) </br>
