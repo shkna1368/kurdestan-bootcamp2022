@@ -55,7 +55,7 @@ kurdestan bootcamp 2022 code repository </br>
 47-Socket programming (UDP) [Youtube](https://youtu.be/sZ1LYoIESW8) </br>
 48-I/O [Youtube](https://youtu.be/dE6oR_wIBDY) </br>
 49-Swing (user interface) [Youtube](https://youtu.be/2vm1Qbc5pR0) </br>
-50-Reflection [Youtube](https://youtu.be/HPgcZTLHxJ4) </br>
+50-Reflection [Youtube](https://youtu.be/A2y0OMhjg_c) </br>
 51-Maven [Youtube](https://youtu.be/zPW1sr-IZG8) </br>
 52-Git (source control) [Youtube](https://youtu.be/HPgcZTLHxJ4) </br>
 53-Design pattern [Youtube](https://youtu.be/IgHnhPLULAw) </br>
