@@ -62,23 +62,23 @@ kurdestan bootcamp 2022 code repository </br>
 
 ----Spring boot-----
 
-54-JEE </br>
-55-First spring boot app </br>
-56-spring service - DI(dependency injection) </br>
-57-Entity & Repository </br>
-58-CRUD1</br>
-59-CRUD2 </br>
-60-JPA-ORM-SPRING DATA JPA </br>
-61-DTO (mapstruct) </br>
-62-Specification </br>
-63-Exception Handling in spring  </br>
-64-Relations(one to one- one to many-many to many) </br>
-65-OneToMany </br>
-66-ManyToMany </br>
-67-OneToOne - Minio </br>
-68-Auditing </br>
-69-Hibernate envers </br>
-70-cache </br>
+54-JEE [Youtube](https://youtu.be/q353MfQr40k) </br>
+55-First spring boot app [Youtube](https://youtu.be/u3Yr0mswacg) </br>
+56-spring service - DI(dependency injection) [Youtube](https://youtu.be/f-MfT0Bl_GA) </br>
+57-Entity & Repository [Youtube](https://youtu.be/9xtOq_GkmQY) </br>
+58-CRUD1 [Youtube](https://youtu.be/mqeipAUphkk) </br>
+59-CRUD2 [Youtube](https://youtu.be/f-MfT0Bl_GA) </br>
+60-JPA-ORM-SPRING DATA JPA [Youtube](https://youtu.be/BXwFRk-403w) </br>
+61-DTO (mapstruct) [Youtube](https://youtu.be/IciqVtPCaBo) </br>
+62-Specification [Youtube](https://youtu.be/MUtJ8tj6hdU) </br>
+63-Exception Handling in spring [Youtube](https://youtu.be/WlkWzXvTkGs) </br>
+64-Relations(one to one- one to many-many to many) [Youtube](https://youtu.be/i1V2HXinsVw) </br>
+65-OneToMany [Youtube](https://youtu.be/fcQymGzp_1Y) </br>
+66-ManyToMany [Youtube](https://youtu.be/E4vcG4WSIcU) </br>
+67-OneToOne - Minio [Youtube](https://youtu.be/5tLERNNAl_A) </br>
+68-Auditing [Youtube](https://youtu.be/GoC3qHOwBYo) </br>
+69-Hibernate envers [Youtube](https://youtu.be/JEpRLQtD_rU) </br>
+70-cache [Youtube](https://youtu.be/0KIaM3yCOw8) </br>
 71-scheduler </br>
 72-make jar file </br>
 73-Transaction </br>
