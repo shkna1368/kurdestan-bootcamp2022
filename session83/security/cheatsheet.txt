@@ -27,3 +27,6 @@ password:user
 scope:openid
 client authentication:send as basic auth header
 10-click get new token,proceed ,use token
+
+------------------You can get token from keycloak with another way:
+https://www.baeldung.com/postman-keycloak-endpoints
