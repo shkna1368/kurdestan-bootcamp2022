@@ -1,0 +1,115 @@
+The summerize vert.x in action:
+
+Combine asynchronous programming, horizontal scalability, and resilience, and
+you have what we today call reactive applications, which can also be summarized without
+marketing jargon as “scalable and dependable applications.”
+
+verticles, the core building blocks for writing non-blocking
+code in Vert.x.
+
+The nice thing about the event bus is that it allows verticles to communicate
+not just within a single process but also across a cluster, which makes it a
+powerful abstraction.
+
+backpressure
+which is required to regulate the flow of events between consumers and
+producers.
+
+Vert.x can
+mix and match different models: futures and promises, reactive extensions, and
+Kotlin coroutines.
+
+The idea behind non-blocking I/O is to request a (blocking) operation, and move
+on to doing other tasks until the operation result is ready. For example a non-blocking
+read may ask for up to 256 bytes over a network socket, and the execution thread does
+other things (like dealing with another connection) until data has been put into the
+buffers, ready for consumption in memory. In this model, many concurrent connections
+can be multiplexed on a single thread, as network latency typically exceeds the
+CPU time it takes to read incoming bytes.
+
+
+A popular threading model for processing asynchronous events is that of the event
+loop. Instead of polling for events that may have arrived, as we did in the previous Java
+NIO example, events are pushed to an event loop.
+
+The four properties of reactive systems are exposed in The Reactive Manifesto: responsive,
+resilient, elastic, and message-driven .
+
+
+
+Elastic—Elasticity is the ability for the application to work with a variable number
+of instances.
+
+Resilient—Resiliency is partially the flip side of elasticity. When one instance
+crashes in a group of elastic instances, resiliency is naturally achieved by redirecting
+traffic to other instances, and a new instance can be started if necessary.
+That being said, there is more to resiliency.
+
+Responsive—Responsivity is the result of combining elasticity and resiliency.
+
+Message-driven—Using asynchronous message passing rather than blocking paradigms
+like remote procedure calls is the key enabler of elasticity and resiliency,
+which lead to responsiveness.
+
+The essence of Vert.x
+As you may have guessed from the previous sections of this chapter, the focus of
+Vert.x is processing asynchronous events, mostly coming from non-blocking I/O, and
+the threading model processes events in an event loop.
+
+While it’s not apparent here, an event loop is managing the processing of events,
+be it a new TCP connection, the arrival of a buffer, a new HTTP request, or a periodic
+task that is being fired. Also, every event handler is being executed on the same
+(event-loop) thread.
+
+------------------------------------------------------------------------------------------------
+Verticles:Put simply, in the actor model, autonomous entities (the
+actors) exclusively communicate with other entities by sending and responding to
+messages.
+verticles have private state that may be updated when receiving events, they
+can deploy other verticles, and they can communicate via message-passing (more on
+that in the next chapter).
+
+a Vert.x Promise is an
+adaptation of the futures and promises model for processing asynchronous results.2 A
+promise is used to write an asynchronous result, whereas a future is used to view an asynchronous
+result.
+
+Vert.x creates twice the
+number of event-loop threads as CPU cores. If you have 8 cores, then a Vert.x application
+has 16 event loops. The assignment of verticles to event loops is done in a roundrobin
+fashion.
+
+some networked services. Vert.x provides two options for
+dealing with such cases: worker verticles and the executeBlocking operation.
+
+-------------------------------
+having one verticle for exposing an HTTP API and another for dealing with a data
+store. This design also encourages the deployment of several instances of a given
+verticle for scalability purposes.
+Connecting verticles and making sure they can cooperate is the role of the event
+bus.
+
+The event bus allows for decoupling between verticles.
+Communications over the event bus follow three patterns:
+1-Point-to-point messaging:With point-to-point messaging, one of the possibly multiple consumers picks a
+message and processes it.
+2-Request-reply messaging:This messaging pattern works well for mimicking remote procedure calls, but with
+the response being sent in an asynchronous fashion, so there is no need to keep waiting
+until it comes back. For example, an HTTP API verticle can send a request to a
+data store verticle to fetch some data, and the data store verticle eventually returns a
+reply message.
+3-Publish/subscribe messaging:Publish/subscribe is useful when you are not sure how many verticles and handlers
+will be interested in a particular event
+
+The longer explanation is that it is
+an event bus for verticle-to-verticle communications inside an application, not a message
+bus for application-to-application communications.
+---------------------------------
+A read stream is a source of events that can be read,
+whereas a write stream is a destination for events to be sent to. For example, an HTTP
+request is a read stream, and an HTTP response is a write stream.
+
+Back-pressure is a mechanism for a consumer of events to signal an event’s producer
+that it is emitting events at a faster rate than the consumer can handle them.
+
+https://github.com/realyurimednikov/vertx-hibernate/tree/master/src/main/java/xyz/mednikov/sandbox/hibernate

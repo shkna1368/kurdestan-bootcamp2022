@@ -1,0 +1,15 @@
+Reactive is a set of principles to build robust, efficient, and concurrent applications and systems.
+Imperative vs. Reactive: a question of threads.
+Non-blocking I/O provides an efficient way to deal with concurrent I/O. A minimal amount of threads called I/O threads, can handle many concurrent I/O. 
+When processing a request requires interacting with a remote service, like an HTTP API or a database, it does not block the execution while waiting for the response. Instead, it schedules the I/O operation and attaches a continuation, i.e., the request processing remaining code.
+
+Quarkus is reactive. It’s even more than this: Quarkus unifies reactive and imperative programming. You don’t even have to choose: you can implement reactive components and imperative components then combine them inside the very same application. No need to use different stacks, tooling or APIs; Quarkus bridges both worlds.
+. Quarkus uses Mutiny as its central reactive programming model.
+Quarkus is a Reactive framework. Since the beginning, Reactive has been an essential tenet of the Quarkus architecture. It includes many reactive features and offers a broad ecosystem.
+Mutiny is an intuitive, reactive programming library. It is the primary model to write reactive applications with Quarkus.
+
+Quarkus uses Mutiny as its central reactive programming model. So, it supports returning Mutiny types (Uni and Multi) from HTTP endpoints.
+Uni is an asynchronous type. It’s a bit like a future. It’s a placeholder that will get its value (item) later.
+. It returns a Uni, which will complete when the database has retrieved the row. 
+
+
