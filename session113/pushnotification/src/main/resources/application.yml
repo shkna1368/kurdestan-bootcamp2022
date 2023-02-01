@@ -1,0 +1,24 @@
+server:
+  port: 8181
+  servlet:
+    context-path: /push
+---
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mqtt
+    username: postgres
+    password: postgres
+
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+
+
+EMQX:
+  API_KEY: 48d28db3615342ab
+  API_SECRET: FJwiWUvSnt3i5CNwZLQzrmRyYBMJgovJJGCatRo7EtO
+

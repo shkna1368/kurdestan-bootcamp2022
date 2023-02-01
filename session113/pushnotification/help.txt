@@ -1,0 +1,10 @@
+1-emqx install
+2-Username: admin; Password: public
+3-change password in first time
+4-make authenticate 
+
+---
+5-api key
+
+6-swagger   http://localhost:18083/api-docs/index.html
+7-Dashboard http://localhost:18083/
