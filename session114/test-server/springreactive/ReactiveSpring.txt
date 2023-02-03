@@ -1,0 +1,19 @@
+Reactive Spring
+Project Reactor,the reactive programming library that underpins Spring’s reactive features.
+WebFlux, a webframework that borrows much from Spring MVC while offering a new reactive model for web development.
+RSocket, a communication protocol that enables a reactive alternative to HTTP.
+
+we can write two styles of code—imperative and reactive, which are described as follows:
+Reactive programming is a paradigm that’s an alternative to imperative programming.
+
+Consequently, blocking web frameworks won’t scale effectively under heavy
+request volume.
+
+Asynchronous web frameworks, in contrast, achieve higher scalability with fewer
+threads—generally one per CPU core. By applying a technique known as event looping
+(as illustrated in figure 12.1), these frameworks are able to handle many requests per
+thread, making the per-connection cost more economical.
+An interesting side effect of using WebFlux instead of Spring MVC is that the default
+embedded server for WebFlux is Netty instead of Tomcat. Netty is one of a handful of
+asynchronous, event-driven servers and is a natural fit for a reactive web framework
+like Spring WebFlux.

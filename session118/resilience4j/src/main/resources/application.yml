@@ -1,0 +1,145 @@
+server:
+  tomcat:
+    threads:
+      max: 20
+
+resilience4j.circuitbreaker:
+  instances:
+    postClientCB:
+      registerHealthIndicator: true
+      slidingWindowSize: 60
+      slidingWindowType: TIME_BASED
+      permittedNumberOfCallsInHalfOpenState: 3
+      minimumNumberOfCalls: 10
+      waitDurationInOpenState: 5s
+      slowCallRateThreshold: 100
+      slowCallDurationThreshold: 2000
+      failureRateThreshold: 50
+
+---
+
+---
+
+#Threadpool bulkhead
+resilience4j.thread-pool-bulkhead:
+  instances:
+    bht-service:
+      registerHealthIndicator: true
+     # maxThreadPoolSize: 1
+      coreThreadPoolSize: 1
+      queueCapacity: 1
+      #keepAliveDuration: 20ms
+
+
+#Semaphore bulkhead
+resilience4j.bulkhead:
+  instances:
+    bhs-service:
+      registerHealthIndicator: true
+      maxConcurrentCalls: 5  #Max Amount of parallel execution allowed by bulkhead.
+      maxWaitDuration: 3s
+
+
+
+---
+---
+
+resilience4j.ratelimiter:
+  instances:
+    postClientRateLimiter:
+      limitRefreshPeriod: 60s
+      limitForPeriod: 5
+      timeoutDuration: 3s
+      registerHealthIndicator: true    #To register ratelimiter details to /actuator/health endpoint.
+      eventConsumerBufferSize: 100     #Buffer size to store the ratelimiter events - viewable via /actuator/ratelimiterevents
+
+---
+---
+resilience4j.timelimiter:
+  metrics:
+    enabled: true
+  instances:
+     postClinetTL:
+       timeoutDuration: 1s
+       cancelRunningFuture: true
+       registerHealthIndicator: true
+---
+
+---
+resilience4j.retry:
+  metrics:
+    enabled: true
+  instances:
+    postClientRetry:
+      registerHealthIndicator: true
+      maxAttempts: 4
+      waitDuration: 1s
+      #enableExponentialBackoff: true
+      #exponentialBackoffMultiplier: 2
+      retryExceptions:
+        - org.springframework.web.client.HttpServerErrorException
+        - java.io.IOException
+        - java.net.ConnectException
+        - feign.RetryableException
+      ignoreExceptions:
+        - com.kurdestan.resilienc4j.common.exception.BadRequestException
+---
+#Threadpool bulkhead
+resilience4j.thread-pool-bulkhead:
+  instances:
+    postClinetRetBH:
+      maxThreadPoolSize: 3
+      coreThreadPoolSize: 2
+      queueCapacity: 1
+      keepAliveDuration: 20ms
+---
+resilience4j:
+  circuitbreaker:
+    circuit-breaker-aspect-order: 1
+  retry:
+    retry-aspect-order: 2
+---
+#Threadpool bulkhead
+resilience4j.thread-pool-bulkhead:
+  instances:
+    postClinetTLBH:
+      maxThreadPoolSize: 3
+      coreThreadPoolSize: 2
+      queueCapacity: 1
+      keepAliveDuration: 20ms
+---
+  management:
+    endpoint:
+      health:
+        show-details: always         #To show all details in /health endpoint.
+---
+ # management.health.circuitbreakers.enabled: true #To show Circuit Breaker status
+  management:
+    health:
+      circuitbreakers:
+        enabled: true
+      ratelimiters:
+        enabled: true
+
+
+---
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+---
+spring:
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+---
+logging:
+  level:
+        com:
+           kurdestan:
+               resilienc4j:
+                 retry:
+                  RTPostClient : DEBUG
