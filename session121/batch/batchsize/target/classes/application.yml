@@ -1,0 +1,32 @@
+
+
+
+server:
+  port: 8181
+---
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/company
+    username: postgres
+    password: postgres
+
+
+
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          #batch_size: 100
+          batch_versioned_data: true
+        order_inserts: true
+
+        generate_statistics: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+
+---
+
