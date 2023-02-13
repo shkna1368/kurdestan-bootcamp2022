@@ -124,3 +124,14 @@ kurdestan bootcamp 2022 code repository </br>
 111-opencv [Youtube](https://youtu.be/HVSzj_nS07w) </br>
 
 112-Reactive Programming [Youtube](https://youtu.be/ZXXZEhjtCx0) </br>
+113-Mqtt with emqx  [Youtube](https://youtu.be/ZHAIjnfNwYA) </br>
+114-Resilience4j  [Youtube](https://youtu.be/MmzD242FHZM) </br>
+115-CircuitBreaker [Youtube](https://youtu.be/H2Ar8QsPhR0) </br>
+116-Bulkhead [Youtube](https://youtu.be/heiimXVshzM) </br>
+117-RateLimiter [Youtube](https://youtu.be/Bjqm4-m4Fws) </br>
+118-Retry [Youtube](https://youtu.be/Bjqm4-m4Fws) </br>
+119-TimeLimiter [Youtube](https://youtu.be/0wEfCPXUy4s) </br>
+120-Entitygraph(n+1 problem) [Youtube](https://youtu.be/PscwXLS6_ic) </br>
+121-Batch size(insert)) [Youtube](https://youtu.be/9nLG7Ht3Npo) </br>
+122-Connection pool(Hikari) [Youtube](https://youtu.be/hqobEqNO0CA) </br>
+123-Benchmarking(JMH)  [Youtube](https://www.youtube.com/watch?v=54_a1QqvDTg&t=2s) </br>
