@@ -1,0 +1,37 @@
+query {
+  allBooks {
+    title
+    pages
+    rating {
+      star
+    }
+    author {
+      firstName
+      lastName
+    }
+  }
+}
+
+-------------
+
+query {
+  findOne(id: 1) {
+    title
+    pages
+    rating {
+      star
+    }
+    author {
+      firstName
+      lastName
+    }
+  }
+}
+
+----
+mutation  {
+  create(rate:"rts",star:"12") {
+    star
+    
+  }
+}

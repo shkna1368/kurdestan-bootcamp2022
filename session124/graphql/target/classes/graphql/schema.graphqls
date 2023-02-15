@@ -1,0 +1,29 @@
+type Book {
+  id: ID!
+  title: String
+  pages: Int
+  rating: Rating
+  author: Author
+}
+
+type Rating {
+  rate: String
+  star: String
+}
+
+type Author {
+  id: ID!
+  firstName: String
+  lastName: String
+  books: [Book]
+}
+type Query {
+  allBooks: [Book]
+  findOne(id: ID!): Book
+}
+
+type Mutation {
+  create(rate: String,star: String): Rating
+  update(id: ID,rate: String,star: String): Rating
+  delete(id: ID): Rating
+}

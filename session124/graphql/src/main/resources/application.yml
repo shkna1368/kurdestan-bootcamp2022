@@ -1,0 +1,27 @@
+
+
+server:
+  port: 8181
+
+spring:
+  graphql:
+    graphiql:
+      enabled: true
+---
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/graphql
+    username: postgres
+    password: postgres
+
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+
+
+
+
