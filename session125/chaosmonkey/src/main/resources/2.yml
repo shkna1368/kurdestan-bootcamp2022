@@ -1,0 +1,70 @@
+
+server:
+  port: 8181
+---
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/company
+    username: postgres
+    password: postgres
+
+
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+---
+spring:
+  profiles:
+    active: chaos-monkey
+chaos:
+  monkey:
+    enabled: true
+    watcher:
+      service: true
+      repository: false
+      controller: false
+    assaults:
+      latencyActive: false
+      #latency-range-start: 3000
+      #latency-range-end: 5000
+      exceptions-active: true
+      kill-application-active: false
+      memory-active: false
+      #memoryMillisecondsHoldFilledMemory: 3000
+      #memoryMillisecondsWaitNextIncrease: 1000
+      #memoryFillIncrementFraction: 0.10
+     # memoryFillTargetFraction: 0.90
+      cpu-active: false
+      memory-milliseconds-hold-filled-memory: 3000
+      memory-milliseconds-wait-next-increase: 1000
+      memory-fill-increment-fraction: 0.10
+      memory-fill-target-fraction: 0.90
+      cpu-load-target-fraction: 0.9
+      cpu-milliseconds-hold-load: 90000
+
+
+
+---
+management:
+  endpoint:
+    chaosmonkey:
+      enabled: true
+    chaosmonkeyjmx:
+      enabled: true
+
+  endpoints:
+    web:
+      exposure:
+        # include all endpoints
+        include: "*"
+---
+springdoc:
+  show-actuator: true
+chaos.monkey:
+  apidoc:
+    enabled: true

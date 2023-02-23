@@ -1,0 +1,90 @@
+{
+  "version": "1.0.0",
+  "title": "Employee when database is down",
+  "description": "N/A",
+  "tags": [],
+  "steady-state-hypothesis": {
+    "title": "Employee data is available",
+    "probes": [
+      {
+        "type": "probe",
+        "name": "we-can-retrieve-employee-data",
+        "tolerance": 200,
+        "provider": {
+          "type": "http",
+          "timeout": 5,
+          "url": "http://localhost:8181/company/all"
+        }
+      }
+    ]
+  },
+  "method": [
+    {
+      "name": "enable_chaosmonkey",
+      "provider": {
+        "arguments": {
+          "base_url": "http://localhost:8181/actuator"
+        },
+        "func": "enable_chaosmonkey",
+        "module": "chaosspring.actions",
+        "type": "python"
+      },
+      "type": "action"
+    },
+    {
+      "name": "configure_assaults",
+      "provider": {
+        "arguments": {
+          "base_url": "http://localhost:8181/actuator",
+          "assaults_configuration": {
+            "level": 1,
+            "latencyActive": false,
+            "exceptionsActive": true,
+            "exception": {
+              "type": "java.lang.RuntimeException"
+
+            }
+          }
+        },
+        "func": "change_assaults_configuration",
+        "module": "chaosspring.actions",
+        "type": "python"
+      },
+      "type": "action"
+    },
+    {
+      "name": "configure_repository_watcher",
+      "tolerance": 200,
+      "provider": {
+        "type": "http",
+        "url": "http://localhost:8181/actuator/chaosmonkey/watchers",
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "arguments": {
+          "controller": false,
+          "restController": false,
+          "service": true,
+          "repository": true,
+          "component": false
+        }
+      },
+      "type": "action"
+    }
+  ],
+  "rollbacks": [
+    {
+      "name": "disable_chaosmonkey",
+      "provider": {
+        "arguments": {
+          "base_url": "http://localhost:8181/actuator"
+        },
+        "func": "disable_chaosmonkey",
+        "module": "chaosspring.actions",
+        "type": "python"
+      },
+      "type": "action"
+    }
+  ]
+}

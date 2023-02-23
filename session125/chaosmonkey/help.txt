@@ -1,0 +1,7 @@
+python.exe -m pip install -U pip
+python.exe -m pip install -U chaostoolkit
+python.exe -m pip install -U chaostoolkit-spring
+chaos run experiment.json
+chaos run .\experiment.json
+
+----http://localhost:8181/actuator/chaosmonkey

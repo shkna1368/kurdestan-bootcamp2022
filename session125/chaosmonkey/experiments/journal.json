@@ -1,0 +1,336 @@
+{
+  "chaoslib-version": "1.33.1",
+  "platform": "Windows-10-10.0.19044-SP0",
+  "node": "DESKTOP-9PJ85HQ",
+  "experiment": {
+    "version": "1.0.0",
+    "title": "Employee when database is down",
+    "description": "N/A",
+    "tags": [],
+    "steady-state-hypothesis": {
+      "title": "Employee data is available",
+      "probes": [
+        {
+          "type": "probe",
+          "name": "we-can-retrieve-employee-data",
+          "tolerance": 200,
+          "provider": {
+            "type": "http",
+            "timeout": 5,
+            "url": "http://localhost:8181/company/all"
+          }
+        }
+      ]
+    },
+    "method": [
+      {
+        "name": "enable_chaosmonkey",
+        "provider": {
+          "arguments": {
+            "base_url": "http://localhost:8181/actuator"
+          },
+          "func": "enable_chaosmonkey",
+          "module": "chaosspring.actions",
+          "type": "python"
+        },
+        "type": "action"
+      },
+      {
+        "name": "configure_assaults",
+        "provider": {
+          "arguments": {
+            "base_url": "http://localhost:8181/actuator",
+            "assaults_configuration": {
+              "level": 1,
+              "latencyActive": false,
+              "exceptionsActive": true,
+              "exception": {
+                "type": "java.lang.RuntimeException"
+              }
+            }
+          },
+          "func": "change_assaults_configuration",
+          "module": "chaosspring.actions",
+          "type": "python"
+        },
+        "type": "action"
+      },
+      {
+        "name": "configure_repository_watcher",
+        "tolerance": 200,
+        "provider": {
+          "type": "http",
+          "url": "http://localhost:8181/actuator/chaosmonkey/watchers",
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "arguments": {
+            "controller": false,
+            "restController": false,
+            "service": true,
+            "repository": true,
+            "component": false
+          }
+        },
+        "type": "action"
+      }
+    ],
+    "rollbacks": [
+      {
+        "name": "disable_chaosmonkey",
+        "provider": {
+          "arguments": {
+            "base_url": "http://localhost:8181/actuator"
+          },
+          "func": "disable_chaosmonkey",
+          "module": "chaosspring.actions",
+          "type": "python"
+        },
+        "type": "action"
+      }
+    ],
+    "dry": null
+  },
+  "start": "2023-02-23T11:52:56.506242",
+  "status": "completed",
+  "deviated": false,
+  "steady_states": {
+    "before": {
+      "steady_state_met": true,
+      "probes": [
+        {
+          "activity": {
+            "type": "probe",
+            "name": "we-can-retrieve-employee-data",
+            "tolerance": 200,
+            "provider": {
+              "type": "http",
+              "timeout": 5,
+              "url": "http://localhost:8181/company/all"
+            }
+          },
+          "output": {
+            "status": 200,
+            "headers": {
+              "Content-Type": "application/json",
+              "Transfer-Encoding": "chunked",
+              "Date": "Thu, 23 Feb 2023 11:52:56 GMT",
+              "Keep-Alive": "timeout=60",
+              "Connection": "keep-alive"
+            },
+            "body": [
+              {
+                "id": 1,
+                "name": "Kub, Schiller and Weber",
+                "email": "luke.balistreri@yahoo.com",
+                "version": 0
+              },
+              {
+                "id": 2,
+                "name": "Kub, Mertz and Weissnat",
+                "email": "lloyd.oconnell@hotmail.com",
+                "version": 0
+              },
+              {
+                "id": 3,
+                "name": "Bradtke, Feest and Carter",
+                "email": "kenneth.durgan@gmail.com",
+                "version": 0
+              },
+              {
+                "id": 4,
+                "name": "Raynor, Wisoky and Raynor",
+                "email": "samuel.pfeffer@hotmail.com",
+                "version": 0
+              },
+              {
+                "id": 5,
+                "name": "Barton-Corkery",
+                "email": "beula.connelly@hotmail.com",
+                "version": 0
+              },
+              {
+                "id": 6,
+                "name": "Mitchell and Sons",
+                "email": "kristy.rau@gmail.com",
+                "version": 0
+              },
+              {
+                "id": 7,
+                "name": "Mayert Group",
+                "email": "karina.mills@gmail.com",
+                "version": 0
+              },
+              {
+                "id": 8,
+                "name": "Goodwin, Koepp and Mertz",
+                "email": "melvin.robel@hotmail.com",
+                "version": 0
+              },
+              {
+                "id": 9,
+                "name": "Cruickshank Inc",
+                "email": "lashawna.bernhard@gmail.com",
+                "version": 0
+              },
+              {
+                "id": 10,
+                "name": "Kunde-Sawayn",
+                "email": "gilberto.leffler@gmail.com",
+                "version": 0
+              }
+            ]
+          },
+          "start": "2023-02-23T11:52:56.509239",
+          "status": "succeeded",
+          "end": "2023-02-23T11:52:56.794067",
+          "duration": 0.284828,
+          "tolerance_met": true
+        }
+      ]
+    },
+    "after": {
+      "steady_state_met": true,
+      "probes": [
+        {
+          "activity": {
+            "type": "probe",
+            "name": "we-can-retrieve-employee-data",
+            "tolerance": 200,
+            "provider": {
+              "type": "http",
+              "timeout": 5,
+              "url": "http://localhost:8181/company/all"
+            }
+          },
+          "output": {
+            "status": 200,
+            "headers": {
+              "Content-Type": "application/json",
+              "Transfer-Encoding": "chunked",
+              "Date": "Thu, 23 Feb 2023 11:52:56 GMT",
+              "Keep-Alive": "timeout=60",
+              "Connection": "keep-alive"
+            },
+            "body": []
+          },
+          "start": "2023-02-23T11:52:56.946971",
+          "status": "succeeded",
+          "end": "2023-02-23T11:52:56.961961",
+          "duration": 0.01499,
+          "tolerance_met": true
+        }
+      ]
+    },
+    "during": []
+  },
+  "run": [
+    {
+      "activity": {
+        "name": "enable_chaosmonkey",
+        "provider": {
+          "arguments": {
+            "base_url": "http://localhost:8181/actuator"
+          },
+          "func": "enable_chaosmonkey",
+          "module": "chaosspring.actions",
+          "type": "python"
+        },
+        "type": "action"
+      },
+      "output": "{\"enabledAt\":\"2023-02-23T15:22:56.804+03:30\",\"enabled\":true}",
+      "start": "2023-02-23T11:52:56.798067",
+      "status": "succeeded",
+      "end": "2023-02-23T11:52:56.810054",
+      "duration": 0.011987
+    },
+    {
+      "activity": {
+        "name": "configure_assaults",
+        "provider": {
+          "arguments": {
+            "base_url": "http://localhost:8181/actuator",
+            "assaults_configuration": {
+              "level": 1,
+              "latencyActive": false,
+              "exceptionsActive": true,
+              "exception": {
+                "type": "java.lang.RuntimeException"
+              }
+            }
+          },
+          "func": "change_assaults_configuration",
+          "module": "chaosspring.actions",
+          "type": "python"
+        },
+        "type": "action"
+      },
+      "output": "Assault config has changed",
+      "start": "2023-02-23T11:52:56.811055",
+      "status": "succeeded",
+      "end": "2023-02-23T11:52:56.923985",
+      "duration": 0.11293
+    },
+    {
+      "activity": {
+        "name": "configure_repository_watcher",
+        "tolerance": 200,
+        "provider": {
+          "type": "http",
+          "url": "http://localhost:8181/actuator/chaosmonkey/watchers",
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "arguments": {
+            "controller": false,
+            "restController": false,
+            "service": true,
+            "repository": true,
+            "component": false
+          }
+        },
+        "type": "action"
+      },
+      "output": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "text/plain;charset=UTF-8",
+          "Content-Length": "26",
+          "Date": "Thu, 23 Feb 2023 11:52:56 GMT",
+          "Keep-Alive": "timeout=60",
+          "Connection": "keep-alive"
+        },
+        "body": "Watcher config has changed"
+      },
+      "start": "2023-02-23T11:52:56.924984",
+      "status": "succeeded",
+      "end": "2023-02-23T11:52:56.943974",
+      "duration": 0.01899
+    }
+  ],
+  "rollbacks": [
+    {
+      "activity": {
+        "name": "disable_chaosmonkey",
+        "provider": {
+          "arguments": {
+            "base_url": "http://localhost:8181/actuator"
+          },
+          "func": "disable_chaosmonkey",
+          "module": "chaosspring.actions",
+          "type": "python"
+        },
+        "type": "action"
+      },
+      "output": "{\"disabledAt\":\"2023-02-23T15:22:56.97+03:30\",\"enabledFor\":{\"raw\":\"PT0.166S\",\"formatted\":\"0 seconds\"},\"enabled\":false}",
+      "start": "2023-02-23T11:52:56.965959",
+      "status": "succeeded",
+      "end": "2023-02-23T11:52:56.975953",
+      "duration": 0.009994
+    }
+  ],
+  "end": "2023-02-23T11:52:56.977952",
+  "duration": 0.471710205078125
+}
