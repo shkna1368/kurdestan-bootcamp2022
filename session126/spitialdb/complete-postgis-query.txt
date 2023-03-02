@@ -1,0 +1,75 @@
+PostGis:
+1-create db wit pgAdmin
+2-run below query on created db:
+
+CREATE EXTENSION postgis;
+
+3-create tble :
+CREATE TABLE tbl_properties
+( id integer NOT NULL,
+town character(30),
+postal_code character(10),
+street character(30),
+"number" integer,
+the_geom geometry,
+CONSTRAINT pk_id PRIMARY KEY (id)
+);
+
+
+4-
+
+POINT(-0.116190 51.556173)
+the latitude(y-axis) and the longitude (x-axis)
+
+
+5-drop/create geo column :
+SELECT DropGeometryColumn('tbl_properties', 'the_geom') Add the
+spatial field using this command:
+SELECT AddGeometryColumn('tbl_properties', 'the_geom', 4326,
+'POINT', 2);
+
+
+
+5-insert to table:
+INSERT INTO tbl_properties ( id, town, postal_code, street,
+"number", the_geom)VALUES (88, 'London', 'N7 6PA', 'Holloway Road',
+32, ST_GeomFromEWKT('SRID=4326;POINT(51.556173 -0.116190)'));
+
+
+OR
+
+INSERT INTO sanandaj_place (place_name, lat, lon,
+place_descryption,geo)VALUES ('??? ????', 35.298900,46.990131 ,'??? ????',ST_SetSRID(ST_MakePoint(46.990131,35.298900), 4326));
+
+
+
+6- select
+SELECT name,ST_Distance_Sphere(the_geom,'SRID=4326;POINT(46.991483 35.310621)'::geometry) as distance
+from amaken 
+ORDER BY
+  the_geom <->
+  'SRID=4326;POINT(46.991483 35.310621)'::geometry
+
+
+ORDER BY geom <-> st_setsrid(st_makepoint(-90,47),4326)
+ LIMIT 5;
+
+7)
+SELECT latitude, longitude, address, types,ST_Distance_Sphere(geom, st_setsrid(st_makepoint(35.700339,51.347967),4326)) as distance
+FROM mypoints
+
+ORDER BY distance
+LIMIT 3;
+
+
+8)
+find nearest radious 1000
+SELECT latitude, longitude, address, types,ST_Distance_Sphere(geom, st_setsrid(st_makepoint(35.700339,51.347967),4326)) as distance
+FROM mypoints
+WHERE ST_Distance_Sphere(geom, ST_MakePoint(35.700339,51.347967)) <= 1000
+ORDER BY distance;
+
+
+
+
+

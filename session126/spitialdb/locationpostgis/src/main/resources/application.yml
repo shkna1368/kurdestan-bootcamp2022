@@ -1,0 +1,20 @@
+server:
+  port: 7071
+
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/adv
+    username: postgres
+    password: postgres
+
+
+  jpa:
+    database-platform: org.hibernate.spatial.dialect.postgis.PostgisDialect
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: create-drop
+
+
+
