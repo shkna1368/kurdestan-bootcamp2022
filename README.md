@@ -135,3 +135,9 @@ kurdestan bootcamp 2022 code repository </br>
 121-Batch size(insert) [Youtube](https://youtu.be/9nLG7Ht3Npo) </br>
 122-Connection pool(Hikari) [Youtube](https://youtu.be/hqobEqNO0CA) </br>
 123-Benchmarking(JMH)  [Youtube](https://www.youtube.com/watch?v=54_a1QqvDTg&t=2s) </br>
+124-GraphQL  [Youtube](https://www.youtube.com/watch?v=PeQ5vHTeDdk) </br>
+125-Chaos engineering(spring chaos monkey ) [Youtube](https://www.youtube.com/watch?v=FJS-oPRgkzY) </br>
+126-SpitialDB with spring boot [Youtube](https://www.youtube.com/watch?v=-ESx5fVYsac) </br>
+127-Observability [Youtube](https://www.youtube.com/watch?v=nvh5NKgBi3A) </br>
+128-Loadbalancer [Youtube](https://www.youtube.com/watch?v=7W0kmoMUKt4) </br>
+129-Owasp dependency checker [Youtube](https://www.youtube.com/watch?v=7qGoGiWu5Tw) </br>
