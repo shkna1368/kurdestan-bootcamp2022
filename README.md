@@ -143,5 +143,5 @@ kurdestan bootcamp 2022 code repository </br>
 129-Owasp dependency checker [Youtube](https://www.youtube.com/watch?v=7qGoGiWu5Tw) </br>
 
 
-<h1 align="center">Designed with ❤️ for kurdestan...</h1>
+<h1 align="center">Designed with ❤️ for kurdistan...</h1>
 
